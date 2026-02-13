@@ -12,7 +12,7 @@ public class CarController_TopDown : MonoBehaviour {
     // public float rotationLimiter = 5f; // increase to increase rotation angle.
     // public bool allowStandingRotation = false; // enable for rotation without driving
     // public float maxSpeed = 20; // Caps car speed
-    public float speed = 0f;
+    public float speed = 1f;
 
      // Local Variables
     Vector2 inputVector;
