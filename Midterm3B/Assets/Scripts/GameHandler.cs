@@ -9,6 +9,7 @@ public class GameHandler : MonoBehaviour {
     public int timer = 0;
     private float theTimer = 0f;
     public TMP_Text timerText;
+    public bool timerLive = true;
 
     void Start(){
         UpdateTimer();
@@ -24,9 +25,11 @@ public class GameHandler : MonoBehaviour {
     }
 
     public void UpdateTimer(){
-        int noDecimal = timer / 10;
-        int yesDecimal = timer % 10;
-        timerText.text = "TIME: " + noDecimal + "." + yesDecimal;
+        if(timerLive == true){
+            int noDecimal = timer / 10;
+            int yesDecimal = timer % 10;
+            timerText.text = "TIME: " + noDecimal + "." + yesDecimal;
+        }
     }
 
     public void AddTime(int points){
@@ -37,5 +40,9 @@ public class GameHandler : MonoBehaviour {
     public void SubtractTime(int points){
         timer -= points;
         UpdateTimer();
+    }
+
+    public void StopTimer(){
+        timerLive = false;
     }
 }

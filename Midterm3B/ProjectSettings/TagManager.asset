@@ -6,6 +6,8 @@ TagManager:
   tags:
   - GameHandler
   - Building
+  - PlayerCar
+  - IceCreamStore
   layers:
   - Default
   - TransparentFX

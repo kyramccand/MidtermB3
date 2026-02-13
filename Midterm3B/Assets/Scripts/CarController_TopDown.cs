@@ -5,6 +5,8 @@ using UnityEngine;
 //This script goes onto the Player object
 public class CarController_TopDown : MonoBehaviour {
 
+    public GameHandler gameHandlerObj;
+
     [Header("Car settings")]
     public float turnFactor = 0.1f;
     public float maxSpeed = 5f;
@@ -23,6 +25,9 @@ public class CarController_TopDown : MonoBehaviour {
 
     void Awake(){
         carRb2D = GetComponent<Rigidbody2D>();
+        if(GameObject.FindWithTag("GameHandler") != null){
+          gameHandlerObj = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
+        }
     }
 
     void Update() {
@@ -76,5 +81,13 @@ public class CarController_TopDown : MonoBehaviour {
           Vector2 move = new Vector2(xVelocity * Time.fixedDeltaTime, yVelocity * Time.fixedDeltaTime);
           carRb2D.MoveRotation(rotationAngle);
           carRb2D.MovePosition(carRb2D.position + move);         
+     }
+
+     void OnCollisionEnter2D(Collision2D other){
+        if(other.gameObject.tag == "Building"){
+          gameHandlerObj.AddTime(50);
+        }else if(other.gameObject.tag == "IceCreamStore"){
+          gameHandlerObj.StopTimer();
+        }
      }
 }
