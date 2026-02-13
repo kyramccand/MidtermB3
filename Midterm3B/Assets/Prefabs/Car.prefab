@@ -506,8 +506,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7eb7e8afc244453d8b25e35a7c3d7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnFactor: 3.5
+  turnFactor: 0.1
+  maxSpeed: 5
+  maxReverse: -1
   speed: 1
+  maxSteering: 1
+  minSteering: -1
 --- !u!114 &5689469732721929702
 MonoBehaviour:
   m_ObjectHideFlags: 0
