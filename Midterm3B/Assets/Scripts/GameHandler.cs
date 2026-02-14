@@ -9,7 +9,11 @@ public class GameHandler : MonoBehaviour {
     public int timer = 0;
     private float theTimer = 0f;
     public TMP_Text timerText;
+
     public bool timerLive = true;
+
+    public GameObject changeTimeBG;
+
 
     void Start(){
         UpdateTimer();
@@ -33,13 +37,23 @@ public class GameHandler : MonoBehaviour {
     }
 
     public void AddTime(int points){
-        timer += points;
-        UpdateTimer();
+        if(timerLive == true){
+            timer += points;
+            UpdateTimer();
+
+            changeTimeBG.SetActive(true);
+            changeTimeBG.GetComponent<ChangeTimer>().Add(points);
+        }
     }
 
     public void SubtractTime(int points){
-        timer -= points;
-        UpdateTimer();
+        if(timerLive == true){
+            timer -= points;
+            UpdateTimer();
+
+            changeTimeBG.SetActive(true);
+            changeTimeBG.GetComponent<ChangeTimer>().Subtract(points);
+        }
     }
 
     public void StopTimer(){

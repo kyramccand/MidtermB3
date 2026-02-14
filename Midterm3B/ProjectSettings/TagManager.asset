@@ -8,6 +8,7 @@ TagManager:
   - Building
   - PlayerCar
   - IceCreamStore
+  - BonusCone
   layers:
   - Default
   - TransparentFX
