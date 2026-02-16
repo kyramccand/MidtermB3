@@ -14,6 +14,8 @@ public class CarController_TopDown : MonoBehaviour {
     public float speed = 1f;
     public float maxSteering = 10f;
     public float minSteering = -10f;
+    public float slowDown = 0.05f;
+    public float speedBoost = 2f;
 
      // Local Variables
     Vector2 inputVector;
@@ -37,12 +39,22 @@ public class CarController_TopDown : MonoBehaviour {
         
         // Update driving direction
         UpdateSteering(inputVector);
-        
+        UpdateSpeed();
      }
 
     void FixedUpdate(){
         ApplySteering();
      }
+
+    
+    void UpdateSpeed() {
+      if (speed > maxSpeed) {
+        speed -= slowDown;
+      }
+      else if (speed < maxReverse) {
+        speed += slowDown;
+      }
+    }
 
     void UpdateSteering(Vector2 direction) {
       if (direction.y > 0) {
@@ -52,12 +64,12 @@ public class CarController_TopDown : MonoBehaviour {
       }
       if (direction.x < 0) { // Detect a change to turning left
         if (steeringInput > minSteering) {
-          steeringInput -= 0.1f;
+          steeringInput -= 0.01f;
         }
       }
       else if (direction.x > 0) { // Detect a change to turning right
         if (steeringInput < maxSteering) {
-          steeringInput += 0.1f;
+          steeringInput += 0.01f;
         }
       }
       if (direction.y < 0) {
@@ -86,7 +98,9 @@ public class CarController_TopDown : MonoBehaviour {
      void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.tag == "Building"){
           gameHandlerObj.AddTime(50);
+          speed = 0;
         }else if(other.gameObject.tag == "IceCreamStore"){
+          speed = 0;
           gameHandlerObj.StopTimer();
         }else if(other.gameObject.tag == "BonusCone"){
           gameHandlerObj.SubtractTime(10);
@@ -94,13 +108,16 @@ public class CarController_TopDown : MonoBehaviour {
         }
      }
 
-     void OnTriggerEnter(Collision2D other)
+     void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("SPEED PANEL ENTERED");
         if (other.gameObject.tag == "SpeedPanel")
         {
-            Debug.Log("Player has crossed the object!");
-            // Add your logic here (e.g., load scene, play sound, open door)
+          if (speed > 0) {
+            speed += speedBoost;
+          }
+          else if (speed < 0) {
+            speed -= speedBoost;
+          }
         }
     }
 }
