@@ -10,6 +10,7 @@ TagManager:
   - IceCreamStore
   - BonusCone
   - SpeedPanel
+  - Pedestrian
   layers:
   - Default
   - TransparentFX
