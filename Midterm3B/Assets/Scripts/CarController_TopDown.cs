@@ -58,18 +58,26 @@ public class CarController_TopDown : MonoBehaviour {
         }
         else if (direction.y < 0) {
             if (speed > 0) {
-                speed -= 0.01f;
+                speed -= 0.02f;
             }
             else if (speed > maxReverse) {
-                speed -= 0.005f;
+                speed -= 0.01f;
             }
         }
     }
 
      void ApplySteering(){
-          rotationAngle -= inputVector.x * turnSensitivity;
-          float angleInRadians = (rotationAngle + 90) * Mathf.Deg2Rad;
           // Apply rotation to car
+          float rotationChange = inputVector.x * speed/2f;
+          if (rotationChange > maxSteering) {
+            rotationChange = maxSteering;
+          }
+          else if (rotationChange < minSteering) {
+            rotationChange = minSteering;
+          }
+          rotationAngle -= rotationChange;
+          float angleInRadians = (rotationAngle + 90) * Mathf.Deg2Rad;
+          
           
           float xVelocity = Mathf.Cos(angleInRadians) * speed;
           float yVelocity = Mathf.Sin(angleInRadians) * speed;
