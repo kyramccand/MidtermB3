@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1390411731642271404}
   - component: {fileID: 1986852185874708838}
   m_Layer: 0
-  m_Name: Car_SpeedBoost
+  m_Name: Car_SpeedBoostTestOnly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
