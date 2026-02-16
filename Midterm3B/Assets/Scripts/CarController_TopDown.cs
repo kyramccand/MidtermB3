@@ -93,4 +93,14 @@ public class CarController_TopDown : MonoBehaviour {
           Destroy(other.gameObject);
         }
      }
+
+     void OnTriggerEnter2D(Collider other)
+    {
+        Debug.Log("SPEED PANEL ENTERED");
+        if (other.gameObject.tag == "SpeedPanel")
+        {
+            Debug.Log("Player has crossed the object!");
+            // Add your logic here (e.g., load scene, play sound, open door)
+        }
+    }
 }

@@ -9,6 +9,7 @@ TagManager:
   - PlayerCar
   - IceCreamStore
   - BonusCone
+  - SpeedPanel
   layers:
   - Default
   - TransparentFX
