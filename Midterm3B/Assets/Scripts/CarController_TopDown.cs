@@ -94,7 +94,7 @@ public class CarController_TopDown : MonoBehaviour {
         }
      }
 
-     void OnTriggerEnter2D(Collider other)
+     void OnTriggerEnter(Collision2D other)
     {
         Debug.Log("SPEED PANEL ENTERED");
         if (other.gameObject.tag == "SpeedPanel")
