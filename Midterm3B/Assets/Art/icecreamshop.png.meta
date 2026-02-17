@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 058e5e59c6392124b8cb3fb32e793d5b
+guid: 24892918263388d4d9fd408223fff177
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7921649188387484213
-    second: Car_0
+      213: 2582845491225210972
+    second: icecreamshop_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 600
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Car_0
+      name: icecreamshop_0
       rect:
         serializedVersion: 2
-        x: 191
-        y: 120
-        width: 315
-        height: 688
+        x: 124
+        y: 87
+        width: 642
+        height: 544
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bcd07eaa806a01290800000000000000
-      internalID: -7921649188387484213
+      spriteID: c50b23e2a4c18d320800000000000000
+      internalID: 2582845491225210972
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Car_0: -7921649188387484213
+      icecreamshop_0: 2582845491225210972
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
