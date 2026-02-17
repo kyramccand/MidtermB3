@@ -8,7 +8,7 @@ public class CarController_TopDown : MonoBehaviour {
     public GameHandler gameHandlerObj;
 
     [Header("Car settings")]
-    public float turnSensitivity = 5f;
+    public float turnFactor = 0.1f;
     public float maxSpeed = 5f;
     public float maxReverse = -3f;
     public float speed = 1f;
@@ -19,6 +19,7 @@ public class CarController_TopDown : MonoBehaviour {
 
      // Local Variables
     Vector2 inputVector;
+    float steeringInput = 0f;
     float rotationAngle = 0f;
 
     // Components
@@ -36,48 +37,56 @@ public class CarController_TopDown : MonoBehaviour {
         inputVector.x = Input.GetAxis("Horizontal");
         inputVector.y = Input.GetAxis("Vertical");
         
-        // Update driving speed
-        UpdateSpeed(inputVector);
+        // Update driving direction
+        UpdateSteering(inputVector);
+        UpdateSpeed();
      }
 
     void FixedUpdate(){
         ApplySteering();
      }
 
-    void UpdateSpeed(Vector2 direction) {
-        if (speed > maxSpeed) {
+    
+    void UpdateSpeed() {
+      if (speed > maxSpeed) {
         speed -= slowDown;
+      }
+      else if (speed < maxReverse) {
+        speed += slowDown;
+      }
+    }
+
+    void UpdateSteering(Vector2 direction) {
+      if (direction.y > 0) {
+        if (speed < maxSpeed) {
+          speed += 0.01f;
         }
-        else if (speed < maxReverse) {
-          speed += slowDown;
+      }
+      if (direction.x < 0) { // Detect a change to turning left
+        if (steeringInput > minSteering) {
+          steeringInput -= 0.01f;
         }
-        if (direction.y > 0) {
-            if (speed < maxSpeed) {
-                speed += 0.01f;
-            }
+      }
+      else if (direction.x > 0) { // Detect a change to turning right
+        if (steeringInput < maxSteering) {
+          steeringInput += 0.01f;
         }
-        else if (direction.y < 0) {
-            if (speed > 0) {
-                speed -= 0.02f;
-            }
-            else if (speed > maxReverse) {
-                speed -= 0.01f;
-            }
-        }
+      }
+      if (direction.y < 0) {
+        steeringInput = 0;
+          if (speed > 0) {
+            speed -= 0.01f;
+          }
+          else if (speed > maxReverse) {
+            speed -= 0.005f;
+          }
+      }
     }
 
      void ApplySteering(){
-          // Apply rotation to car
-          float rotationChange = inputVector.x * speed/2f;
-          if (rotationChange > maxSteering) {
-            rotationChange = maxSteering;
-          }
-          else if (rotationChange < minSteering) {
-            rotationChange = minSteering;
-          }
-          rotationAngle -= rotationChange;
+          rotationAngle -= steeringInput * turnFactor;
           float angleInRadians = (rotationAngle + 90) * Mathf.Deg2Rad;
-          
+          // Apply rotation to car
           
           float xVelocity = Mathf.Cos(angleInRadians) * speed;
           float yVelocity = Mathf.Sin(angleInRadians) * speed;
