@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class GameHandler : MonoBehaviour {
 
@@ -59,4 +61,21 @@ public class GameHandler : MonoBehaviour {
     public void StopTimer(){
         timerLive = false;
     }
+
+    public void StartGame() {
+        SceneManager.LoadScene("Level1");
+    }
+
+    public void QuitGame() {
+            #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+                #else
+                Application.Quit();
+                #endif
+      }
+
+    public void Credits() {
+        SceneManager.LoadScene("Credits");
+    }
+
 }
