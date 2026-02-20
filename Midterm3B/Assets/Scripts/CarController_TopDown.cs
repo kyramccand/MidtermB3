@@ -8,19 +8,19 @@ public class CarController_TopDown : MonoBehaviour {
     public GameHandler gameHandlerObj;
 
     [Header("Car settings")]
-    public float turnFactor = 0.1f;
-    public float maxSpeed = 5f;
-    public float maxReverse = -3f;
-    public float speed = 1f;
-    public float maxSteering = 10f;
-    public float minSteering = -10f;
-    public float slowDown = 0.05f;
-    public float speedBoost = 2f;
+    public float accelerationFactor = 10.0f;
+    public float turnFactor = 3.5f;
+    public float driftFactor = 0.95f; // adds more natural drift
+    public float rotationLimiter = 5f; // increase to increase rotation angle.
+    public bool allowStandingRotation = false; // enable for rotation without driving
+    public float maxSpeed = 20; // Caps car speed
 
      // Local Variables
     Vector2 inputVector;
+    float accelerationInput = 0f;
     float steeringInput = 0f;
     float rotationAngle = 0f;
+    float velocityVsUp = 0f; // Track forwards velocity
 
     // Components
     Rigidbody2D carRb2D;
@@ -36,71 +36,77 @@ public class CarController_TopDown : MonoBehaviour {
         inputVector = Vector2.zero;
         inputVector.x = Input.GetAxis("Horizontal");
         inputVector.y = Input.GetAxis("Vertical");
-        
-        // Update driving direction
-        UpdateSteering(inputVector);
-        UpdateSpeed();
+        SetInputVector(inputVector);
      }
 
     void FixedUpdate(){
+        ApplyEngineForce();
+        KillOrthogonalVelocity(); // Apply drifting function
         ApplySteering();
      }
 
-    
-    void UpdateSpeed() {
-      if (speed > maxSpeed) {
-        speed -= slowDown;
-      }
-      else if (speed < maxReverse) {
-        speed += slowDown;
-      }
-    }
-
-    void UpdateSteering(Vector2 direction) {
-      if (direction.y > 0) {
-        if (speed < maxSpeed) {
-          speed += 0.01f;
-        }
-      }
-      if (direction.x < 0) { // Detect a change to turning left
-        if (steeringInput > minSteering) {
-          steeringInput -= 0.01f;
-        }
-      }
-      else if (direction.x > 0) { // Detect a change to turning right
-        if (steeringInput < maxSteering) {
-          steeringInput += 0.01f;
-        }
-      }
-      if (direction.y < 0) {
-        steeringInput = 0;
-          if (speed > 0) {
-            speed -= 0.01f;
+     void ApplyEngineForce() {
+          // Calculate directional velocity (how much "forward" we are moving)
+          velocityVsUp = Vector2.Dot(transform.up, carRb2D.linearVelocity);
+          // Limit velocity to maxSpeed
+          if (velocityVsUp > maxSpeed && accelerationInput > 0) {
+               return;
           }
-          else if (speed > maxReverse) {
-            speed -= 0.005f;
-          }
-      }
-    }
 
-     void ApplySteering(){
-          rotationAngle -= steeringInput * turnFactor;
-          float angleInRadians = (rotationAngle + 90) * Mathf.Deg2Rad;
-          // Apply rotation to car
-          
-          float xVelocity = Mathf.Cos(angleInRadians) * speed;
-          float yVelocity = Mathf.Sin(angleInRadians) * speed;
-          Vector2 move = new Vector2(xVelocity * Time.fixedDeltaTime, yVelocity * Time.fixedDeltaTime);
-          carRb2D.MoveRotation(rotationAngle);
-          carRb2D.MovePosition(carRb2D.position + move);         
+          // Limit velocity reversing
+          if (velocityVsUp < -maxSpeed * 0.5f && accelerationInput < 0) {
+               return;
+          }
+
+          // Do the same for all other directions
+          if (carRb2D.linearVelocity.sqrMagnitude > maxSpeed * maxSpeed && accelerationInput > 0) {
+               return;
+          }
+
+          // Apply drag if there is no acceleration input
+          if (accelerationInput == 0) {
+               carRb2D.linearDamping = Mathf.Lerp(carRb2D.linearDamping, 3.0f, Time.fixedDeltaTime * 3);
+          } else {
+               carRb2D.linearDamping = 0;
+          }
+
+          // Create a force for the car to start
+          Vector2 engineForceVector = transform.up * accelerationInput * accelerationFactor;
+
+          // Apply force to car
+          carRb2D.AddForce(engineForceVector, ForceMode2D.Force);
      }
 
-     void OnCollisionEnter2D(Collision2D other){
+    void ApplySteering(){
+          //       float angleInRadians = (rotationAngle + 90) * Mathf.Deg2Rad;
+
+          float minSpeedBeforeTurning = 1;
+          // Limit the car's ability to turn when moving slowly:
+          if (!allowStandingRotation){
+               minSpeedBeforeTurning = (carRb2D.linearVelocity.magnitude / rotationLimiter);
+               minSpeedBeforeTurning = Mathf.Clamp01(minSpeedBeforeTurning);
+          }
+          // Update rotation angle based on input direction
+          rotationAngle -= steeringInput * turnFactor * minSpeedBeforeTurning;
+          // Apply rotation to car
+          carRb2D.MoveRotation(rotationAngle);         
+     }
+
+     void KillOrthogonalVelocity(){
+          Vector2 fwdVelocity = transform.up * Vector2.Dot(carRb2D.linearVelocity, transform.up);
+          Vector2 rightVelocity = transform.right * Vector2.Dot(carRb2D.linearVelocity, transform.right);
+          carRb2D.linearVelocity = fwdVelocity + rightVelocity * driftFactor;         
+     }
+
+     void SetInputVector(Vector2 inputVector) {
+          steeringInput = inputVector.x;
+          accelerationInput = inputVector.y;
+     }
+
+     void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Building"){
           gameHandlerObj.AddTime(50);
-          speed = 0;
         }else if(other.gameObject.tag == "IceCreamStore"){
-          speed = 0;
           gameHandlerObj.StopTimer();
         }else if(other.gameObject.tag == "BonusCone"){
           gameHandlerObj.SubtractTime(10);
@@ -111,16 +117,16 @@ public class CarController_TopDown : MonoBehaviour {
         }
      }
 
-     void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "SpeedPanel")
-        {
-          if (speed > 0) {
-            speed += speedBoost;
-          }
-          else if (speed < 0) {
-            speed -= speedBoost;
-          }
-        }
-    }
+    //  void OnTriggerStay2D(Collider2D other)
+    // {
+    //     if (other.gameObject.tag == "SpeedPanel")
+    //     {
+    //       if (speed > 0) {
+    //         speed += speedBoost;
+    //       }
+    //       else if (speed < 0) {
+    //         speed -= speedBoost;
+    //       }
+    //     }
+    // }
 }
