@@ -10,7 +10,6 @@ public class Traffic_NPC_Patrol : MonoBehaviour {
 
        public Transform[] moveSpots;
        public int startSpot = 0;
-       public bool moveForward = true;
 
        // Turning
        private int nextSpot;
@@ -28,24 +27,25 @@ public class Traffic_NPC_Patrol : MonoBehaviour {
 
               if (Vector2.Distance(transform.position, moveSpots[nextSpot].position) < 0.2f){
                      if (waitTime <= 0){
-                            if (moveForward == true){ previousSpot = nextSpot; nextSpot += 1; }
-                            else if (moveForward == false){ previousSpot = nextSpot; nextSpot -= 1; }
+                            previousSpot = nextSpot;
+                            if (nextSpot == (moveSpots.Length - 1)) {
+                                nextSpot = 0;
+                            }
+                            else {
+                                nextSpot += 1;
+                            }
                             waitTime = startWaitTime;
                      } else {
                             waitTime -= Time.deltaTime;
                      }
               }
 
-              //switch movement direction
-              if (nextSpot == 0) {moveForward = true; }
-              else if (nextSpot == (moveSpots.Length -1)) { moveForward = false; }
-
               //turning the enemy
               if (previousSpot < 0){ previousSpot = moveSpots.Length -1; }
               else if (previousSpot > moveSpots.Length -1){ previousSpot = 0; }
 
               if ((previousSpot == 0) && (faceRight)){ NPCTurn(); }
-              else if ((previousSpot == (moveSpots.Length -1)) && (!faceRight)) { NPCTurn(); }
+              else if ((previousSpot == (moveSpots.Length -1)) && (faceRight)) { NPCTurn(); }
               // NOTE1: If faceRight does not change, try reversing !faceRight, above
               // NOTE2: If NPC faces the wrong direction as it moves, set the sprite Scale X = -1.
        }
