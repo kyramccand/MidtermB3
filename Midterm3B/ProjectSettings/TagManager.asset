@@ -11,6 +11,8 @@ TagManager:
   - BonusCone
   - SpeedPanel
   - Pedestrian
+  - TrafficCar
+  - Car
   layers:
   - Default
   - TransparentFX
