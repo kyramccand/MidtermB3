@@ -6,17 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 4d6aab0ff5c5a4b2aabfbde46188ea47
-  - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: 360cd286af360449a9ff722fb78d437d
-  - enabled: 1
-    path: Assets/Scenes/EndWin.unity
-    guid: 65cf7df278f324a1d8a614aa6de8b4bc
-  - enabled: 1
-    path: Assets/Scenes/Credits.unity
-    guid: 3d7bbc8a60dbe4d69b68d5982572edbd
+    path: Assets/Scenes/Work_Kyra.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
