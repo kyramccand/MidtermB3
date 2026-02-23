@@ -10,6 +10,7 @@ public class Traffic_NPC_Patrol : MonoBehaviour {
 
        public Transform[] moveSpots;
        public int startSpot = 0;
+       public float turnSpeed = 1000f;
 
        // Turning
        private int nextSpot;
@@ -19,13 +20,23 @@ public class Traffic_NPC_Patrol : MonoBehaviour {
        void Start(){
               waitTime = startWaitTime;
               nextSpot = startSpot;
-              //anim = gameObject.GetComponentInChildren<Animator>();
        }
 
        void Update(){
-              transform.position = Vector2.MoveTowards(transform.position, moveSpots[nextSpot].position, speed * Time.deltaTime);
 
-              if (Vector2.Distance(transform.position, moveSpots[nextSpot].position) < 0.2f){
+              transform.position = Vector2.MoveTowards(transform.position, moveSpots[nextSpot].position, speed * Time.deltaTime);
+             
+
+              
+              Vector2 direction = moveSpots[nextSpot].position - transform.position;
+              
+              // // https://discussions.unity.com/t/rotating-slowly-toward-a-target-while-also-moving-toward-that-target/886726
+              // Vector3 targetPos = moveSpots[nextSpot].transform.position;
+              // float angle = Mathf.Atan2(targetPos.y - transform.position.y, targetPos.x - transform.position.x) * Mathf.Rad2Deg;
+              // Quaternion targetRotation = Quaternion.Euler(new Vector3(0f, 0f, angle + 90f));
+              // transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, turnSpeed);
+
+              if (direction.magnitude < 0.2f){
                      if (waitTime <= 0){
                             previousSpot = nextSpot;
                             if (nextSpot == (moveSpots.Length - 1)) {
@@ -43,21 +54,6 @@ public class Traffic_NPC_Patrol : MonoBehaviour {
               //turning the enemy
               if (previousSpot < 0){ previousSpot = moveSpots.Length -1; }
               else if (previousSpot > moveSpots.Length -1){ previousSpot = 0; }
-
-              if ((previousSpot == 0) && (faceRight)){ NPCTurn(); }
-              else if ((previousSpot == (moveSpots.Length -1)) && (faceRight)) { NPCTurn(); }
-              // NOTE1: If faceRight does not change, try reversing !faceRight, above
-              // NOTE2: If NPC faces the wrong direction as it moves, set the sprite Scale X = -1.
-       }
-
-       private void NPCTurn(){
-              // NOTE: Switch player facing label (avoids constant turning)
-              faceRight = !faceRight;
-
-              // NOTE: Multiply player's x local scale by -1.
-              Vector3 theScale = transform.localScale;
-              theScale.x *= -1;
-              transform.localScale = theScale;
        }
 
 }

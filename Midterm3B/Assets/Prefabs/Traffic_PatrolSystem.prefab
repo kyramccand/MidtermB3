@@ -169,7 +169,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &8101148576329428576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
   - {fileID: 3180452593222971419}
   - {fileID: 2833123115100302383}
   startSpot: 0
-  moveForward: 1
+  turnSpeed: 90
   faceRight: 0
 --- !u!1 &5522271544222547350
 GameObject:
