@@ -8,34 +8,38 @@ using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour {
 
-    public int timer = 0;
+    public static int timer = 0;
+    public static bool timerLive = true;
+
     private float theTimer = 0f;
     public TMP_Text timerText;
-
-    public bool timerLive = true;
 
     public GameObject changeTimeBG;
 
 
     void Start(){
+        if(timerLive == true){
+            timer = 0;
+        }
+
         UpdateTimer();
     }
 
     void FixedUpdate(){
-        theTimer += 0.02f;
-        if(theTimer >= 0.1f){
-            timer += 1;
-            theTimer = 0;
-            UpdateTimer();
+        if(timerLive == true){
+            theTimer += 0.02f;
+            if(theTimer >= 0.1f){
+                timer += 1;
+                theTimer = 0;
+                UpdateTimer();
+            }
         }
     }
 
     public void UpdateTimer(){
-        if(timerLive == true){
-            int noDecimal = timer / 10;
-            int yesDecimal = timer % 10;
-            timerText.text = "TIME: " + noDecimal + "." + yesDecimal;
-        }
+        int noDecimal = timer / 10;
+        int yesDecimal = timer % 10;
+        timerText.text = "TIME: " + noDecimal + "." + yesDecimal;
     }
 
     public void AddTime(int points){
@@ -60,6 +64,7 @@ public class GameHandler : MonoBehaviour {
 
     public void StopTimer(){
         timerLive = false;
+        StartCoroutine(endScene());
     }
 
     public void StartGame() {
@@ -72,10 +77,22 @@ public class GameHandler : MonoBehaviour {
                 #else
                 Application.Quit();
                 #endif
-      }
+    }
 
     public void Credits() {
         SceneManager.LoadScene("Credits");
     }
 
+    public void RestartGame() {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
+
+        timer = 0;
+        timerLive = true;
+    }
+
+    IEnumerator endScene(){
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("EndWin");
+    }
 }
