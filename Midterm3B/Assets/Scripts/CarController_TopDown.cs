@@ -108,29 +108,24 @@ public class CarController_TopDown : MonoBehaviour {
           gameHandlerObj.AddTime(50);
         }else if(other.gameObject.tag == "IceCreamStore"){
           gameHandlerObj.WinGame();
-        }else if(other.gameObject.tag == "BonusCone"){
-          gameHandlerObj.SubtractTime(10);
-          Destroy(other.gameObject);
-        }else if(other.gameObject.tag == "Pedestrian"){
+        }
+        else if(other.gameObject.tag == "Pedestrian"){
           gameHandlerObj.AddTime(100);
           Destroy(other.gameObject);
         }
-        else if(other.gameObject.tag == "TrafficCar"){
+        else if(other.gameObject.tag == "TrafficCar") {
           gameHandlerObj.AddTime(100);
           Destroy(other.gameObject);
         }
      }
 
-    //  void OnTriggerStay2D(Collider2D other)
-    // {
-    //     if (other.gameObject.tag == "SpeedPanel")
-    //     {
-    //       if (speed > 0) {
-    //         speed += speedBoost;
-    //       }
-    //       else if (speed < 0) {
-    //         speed -= speedBoost;
-    //       }
-    //     }
-    // }
+     void OnTriggerStay2D(Collider2D other)
+    {
+          if(other.gameObject.tag == "BonusCone"){
+               gameHandlerObj.SubtractTime(10);
+               Vector2 engineForceVector = transform.up * 15f * accelerationFactor;
+               carRb2D.AddForce(engineForceVector, ForceMode2D.Force);
+               Destroy(other.gameObject);
+          }
+     }
 }
