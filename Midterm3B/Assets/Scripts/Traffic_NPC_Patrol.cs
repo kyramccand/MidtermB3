@@ -18,7 +18,7 @@ public class Traffic_NPC_Patrol : MonoBehaviour {
        public bool faceRight = false;
 
        void Start(){
-              transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+              // transform.rotation = Quaternion.Euler(0f, 0f, 180f);
               waitTime = startWaitTime;
               nextSpot = startSpot;
        }
@@ -38,18 +38,19 @@ public class Traffic_NPC_Patrol : MonoBehaviour {
                             waitTime = startWaitTime;
                      } else {
                             waitTime -= Time.deltaTime;
-                            updateRotation();
+                            
                      }
+              }
+              else {
+                     updateRotation();
               }
        }
 
        void updateRotation() {
               // https://discussions.unity.com/t/rotating-slowly-toward-a-target-while-also-moving-toward-that-target/886726
-              // Vector3 targetPos = moveSpots[nextSpot].transform.position;
-              // float angle = Mathf.Atan2(targetPos.y - transform.position.y, targetPos.x - transform.position.x) * Mathf.Rad2Deg;
-              // Quaternion targetRotation = Quaternion.Euler(new Vector3(0f, 0f, angle + 90f));
-              // transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, turnSpeed);
-
-              // transform.Rotate(Vector3.forward/2f);
+              Vector3 targetPos = moveSpots[nextSpot].transform.position;
+              float angle = Mathf.Atan2(targetPos.y - transform.position.y, targetPos.x - transform.position.x) * Mathf.Rad2Deg;
+              Quaternion targetRotation = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
+              transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, turnSpeed);
        }
 }
