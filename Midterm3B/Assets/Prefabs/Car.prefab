@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2212339326265659565}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: -0.4, z: 0}
+  m_LocalPosition: {x: -0.3, y: -0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,7 +76,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 999
   m_Time: 5
   m_PreviewTimeScale: 1
   m_Parameters:
@@ -223,7 +223,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 1000
   m_Sprite: {fileID: -8401234397498399444, guid: 0fed1002a52f3ad49889afd8dec8f899, type: 3}
   m_Color: {r: 1, g: 0.8156863, b: 1, a: 1}
   m_FlipX: 0
@@ -261,7 +261,7 @@ Transform:
   m_GameObject: {fileID: 4477472624739232486}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: -0.4, z: 0}
+  m_LocalPosition: {x: 0.434, y: -0.757, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -311,7 +311,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 999
   m_Time: 5
   m_PreviewTimeScale: 1
   m_Parameters:
@@ -454,7 +454,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.113503456, y: -0.061868668}
+  m_Offset: {x: 0.12602031, y: -0.0031505823}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -464,7 +464,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1295071, y: 3.142727}
+  m_Size: {x: 1.1295068, y: 2.9221914}
   m_EdgeRadius: 0
 --- !u!50 &792858489464096891
 Rigidbody2D:
