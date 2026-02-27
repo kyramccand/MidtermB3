@@ -859,6 +859,11 @@ MonoBehaviour:
   carTag: Car
   shakeTime: 0.12
   shakeAmount: 0.06
+--- !u!4 &174405856 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5946665423542630870, guid: cbf170fe4513447e09cf81aa709e46c3, type: 3}
+  m_PrefabInstance: {fileID: 1876486191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &175021982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4200,6 +4205,10 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6246146629033329532, guid: d0ddf97df935846faaca92879fd267e6, type: 3}
+      propertyPath: store
+      value: 
+      objectReference: {fileID: 174405856}
     - target: {fileID: 6246146629033329532, guid: d0ddf97df935846faaca92879fd267e6, type: 3}
       propertyPath: player
       value: 
