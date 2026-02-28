@@ -6,6 +6,7 @@ using UnityEngine;
 public class CarController_TopDown : MonoBehaviour {
 
     public GameHandler gameHandlerObj;
+    public AudioSource thudSFX;
 
     [Header("Car settings")]
     public float accelerationFactor = 10.0f;
@@ -106,7 +107,8 @@ public class CarController_TopDown : MonoBehaviour {
      }
 
      void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.tag == "Building"){
+        if(other.gameObject.tag == "Building" || other.gameObject.tag == "Wall"){
+          thudSFX.Play();
           gameHandlerObj.AddTime(50);
           GameHandler.buildingsHit++;
         }
