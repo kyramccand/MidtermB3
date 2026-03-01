@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/EndWin.unity
     guid: 65cf7df278f324a1d8a614aa6de8b4bc
   - enabled: 1
+    path: Assets/Scenes/HowToPlay.unity
+    guid: ac463c85aa00d409986a4428b3ece1e9
+  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 3d7bbc8a60dbe4d69b68d5982572edbd
   m_configObjects:

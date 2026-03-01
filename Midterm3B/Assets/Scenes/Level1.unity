@@ -140,6 +140,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Building
       objectReference: {fileID: 0}
+    - target: {fileID: 4204799145985671762, guid: 8d87037d17db8794ead1c063c94a6a7b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 8643394182633309004, guid: 8d87037d17db8794ead1c063c94a6a7b, type: 3}
       propertyPath: m_Size.y
       value: 1.8090792
@@ -265,6 +269,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.23984337
       objectReference: {fileID: 0}
+    - target: {fileID: 8136733862877056987, guid: 06847fe8acd3fba42883816120a5d20c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -387,6 +395,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1509675970}
     m_Modifications:
+    - target: {fileID: 929856802278330094, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 6419594821724514048, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
       propertyPath: m_Name
       value: Tree
@@ -1071,7 +1083,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 152
+  m_SortingOrder: 1050
   m_Sprite: {fileID: -2040901916027038523, guid: 3c5963e780b086449b7bcbe2fcb55084, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1190,9 +1202,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1400
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1211,8 +1223,8 @@ Transform:
   m_GameObject: {fileID: 208984800}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.3, y: 13.3, z: 0}
-  m_LocalScale: {x: 1, y: 39.867733, z: 1}
+  m_LocalPosition: {x: -4.07, y: 13.7, z: 0}
+  m_LocalScale: {x: 1, y: 36, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 68214981}
@@ -1368,8 +1380,8 @@ Transform:
   m_GameObject: {fileID: 243248383}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 18.18, y: -3.2, z: 0}
-  m_LocalScale: {x: 1, y: 65.78176, z: 1}
+  m_LocalPosition: {x: 17.87, y: -4.03, z: 0}
+  m_LocalScale: {x: 1, y: 44.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 68214981}
@@ -1463,9 +1475,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1400
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1493,6 +1505,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1856072347}
     m_Modifications:
+    - target: {fileID: 1717327783585411651, guid: 46d72bb2805f7b44da7bdf317eee3162, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 6856071586531101583, guid: 46d72bb2805f7b44da7bdf317eee3162, type: 3}
       propertyPath: m_Size.y
       value: 1.6966381
@@ -1601,8 +1617,8 @@ Transform:
   m_GameObject: {fileID: 328724374}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 18.18, y: 30.8, z: 0}
-  m_LocalScale: {x: 1, y: 65.78176, z: 1}
+  m_LocalPosition: {x: 17.87, y: 31.7, z: 0}
+  m_LocalScale: {x: 1, y: 44.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 68214981}
@@ -1696,9 +1712,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1400
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1830,7 +1846,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 152
+  m_SortingOrder: 1050
   m_Sprite: {fileID: 7849212177043032176, guid: 3c5963e780b086449b7bcbe2fcb55084, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1987,6 +2003,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Building
       objectReference: {fileID: 0}
+    - target: {fileID: 4204799145985671762, guid: 8d87037d17db8794ead1c063c94a6a7b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 8643394182633309004, guid: 8d87037d17db8794ead1c063c94a6a7b, type: 3}
       propertyPath: m_Size.y
       value: 1.8090782
@@ -2052,6 +2072,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1509675970}
     m_Modifications:
+    - target: {fileID: 929856802278330094, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 6419594821724514048, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
       propertyPath: m_Name
       value: Tree
@@ -2130,6 +2154,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1509675970}
     m_Modifications:
+    - target: {fileID: 929856802278330094, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 6419594821724514048, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
       propertyPath: m_Name
       value: Tree
@@ -2325,6 +2353,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1322484903}
     m_Modifications:
+    - target: {fileID: 1545404231744671300, guid: 481efe8b22bb89a42bcf909e0c9a6fb8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 3523415168622001833, guid: 481efe8b22bb89a42bcf909e0c9a6fb8, type: 3}
       propertyPath: m_Name
       value: MailBox (2)
@@ -2518,6 +2550,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1322484903}
     m_Modifications:
+    - target: {fileID: 32590118752906299, guid: 27a2b61a43b9a48408d15a8d1a69a349, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 4129326744216829964, guid: 27a2b61a43b9a48408d15a8d1a69a349, type: 3}
       propertyPath: m_Name
       value: Lamp Post_TrashCans
@@ -2589,6 +2625,10 @@ PrefabInstance:
     - target: {fileID: 6142114427058858113, guid: 27a2b61a43b9a48408d15a8d1a69a349, type: 3}
       propertyPath: m_LocalPosition.y
       value: -10.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032271870200668805, guid: 27a2b61a43b9a48408d15a8d1a69a349, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
       objectReference: {fileID: 0}
     - target: {fileID: 8039254942259345301, guid: 27a2b61a43b9a48408d15a8d1a69a349, type: 3}
       propertyPath: m_Size.x
@@ -2725,6 +2765,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1509675970}
     m_Modifications:
+    - target: {fileID: 929856802278330094, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 6419594821724514048, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
       propertyPath: m_Name
       value: Tree
@@ -2912,6 +2956,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4127042592688006161, guid: 88558341af8d4584c9e389d232630263, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 7168644502662755060, guid: 88558341af8d4584c9e389d232630263, type: 3}
       propertyPath: m_Name
       value: Firehydrant (1)
@@ -3017,6 +3065,10 @@ PrefabInstance:
     - target: {fileID: 2495590357498709425, guid: 88558341af8d4584c9e389d232630263, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127042592688006161, guid: 88558341af8d4584c9e389d232630263, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
       objectReference: {fileID: 0}
     - target: {fileID: 7168644502662755060, guid: 88558341af8d4584c9e389d232630263, type: 3}
       propertyPath: m_Name
@@ -3226,7 +3278,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 152
+  m_SortingOrder: 1050
   m_Sprite: {fileID: 7849212177043032176, guid: 3c5963e780b086449b7bcbe2fcb55084, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3296,6 +3348,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 752963885}
     m_Modifications:
+    - target: {fileID: 452548266209092723, guid: 3eeb44b24478445ce995142a05418e60, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2310215344308443739, guid: 3eeb44b24478445ce995142a05418e60, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.2
@@ -3385,6 +3441,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1322484903}
     m_Modifications:
+    - target: {fileID: 1545404231744671300, guid: 481efe8b22bb89a42bcf909e0c9a6fb8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 3523415168622001833, guid: 481efe8b22bb89a42bcf909e0c9a6fb8, type: 3}
       propertyPath: m_Name
       value: MailBox
@@ -3564,7 +3624,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 152
+  m_SortingOrder: 1050
   m_Sprite: {fileID: 7849212177043032176, guid: 3c5963e780b086449b7bcbe2fcb55084, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3822,6 +3882,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.1927824
       objectReference: {fileID: 0}
+    - target: {fileID: 8136733862877056987, guid: 06847fe8acd3fba42883816120a5d20c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3842,6 +3906,10 @@ PrefabInstance:
     - target: {fileID: 461891422902884442, guid: 8d87037d17db8794ead1c063c94a6a7b, type: 3}
       propertyPath: m_TagString
       value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204799145985671762, guid: 8d87037d17db8794ead1c063c94a6a7b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
       objectReference: {fileID: 0}
     - target: {fileID: 8643394182633309004, guid: 8d87037d17db8794ead1c063c94a6a7b, type: 3}
       propertyPath: m_Size.y
@@ -3958,6 +4026,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1509675970}
     m_Modifications:
+    - target: {fileID: 929856802278330094, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 6419594821724514048, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
       propertyPath: m_Name
       value: Tree
@@ -4046,6 +4118,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1856072347}
     m_Modifications:
+    - target: {fileID: 1717327783585411651, guid: 46d72bb2805f7b44da7bdf317eee3162, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 6856071586531101583, guid: 46d72bb2805f7b44da7bdf317eee3162, type: 3}
       propertyPath: m_Size.y
       value: 1.8983288
@@ -4211,6 +4287,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 752963885}
     m_Modifications:
+    - target: {fileID: 452548266209092723, guid: 3eeb44b24478445ce995142a05418e60, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2310215344308443739, guid: 3eeb44b24478445ce995142a05418e60, type: 3}
       propertyPath: m_LocalPosition.x
       value: 34.44
@@ -4700,7 +4780,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 152
+  m_SortingOrder: 1050
   m_Sprite: {fileID: 7849212177043032176, guid: 3c5963e780b086449b7bcbe2fcb55084, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4720,6 +4800,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1856072347}
     m_Modifications:
+    - target: {fileID: 1717327783585411651, guid: 46d72bb2805f7b44da7bdf317eee3162, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 6856071586531101583, guid: 46d72bb2805f7b44da7bdf317eee3162, type: 3}
       propertyPath: m_Size.y
       value: 1.8983288
@@ -4862,6 +4946,10 @@ PrefabInstance:
     - target: {fileID: 7270516515417000655, guid: 06847fe8acd3fba42883816120a5d20c, type: 3}
       propertyPath: m_Offset.y
       value: -0.27345884
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136733862877056987, guid: 06847fe8acd3fba42883816120a5d20c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5413,7 +5501,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 152
+  m_SortingOrder: 1050
   m_Sprite: {fileID: -2040901916027038523, guid: 3c5963e780b086449b7bcbe2fcb55084, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5575,6 +5663,10 @@ PrefabInstance:
     - target: {fileID: 461891422902884442, guid: 8d87037d17db8794ead1c063c94a6a7b, type: 3}
       propertyPath: m_TagString
       value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204799145985671762, guid: 8d87037d17db8794ead1c063c94a6a7b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
       objectReference: {fileID: 0}
     - target: {fileID: 8643394182633309004, guid: 8d87037d17db8794ead1c063c94a6a7b, type: 3}
       propertyPath: m_Size.y
@@ -5958,7 +6050,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 152
+  m_SortingOrder: 1050
   m_Sprite: {fileID: 7849212177043032176, guid: 3c5963e780b086449b7bcbe2fcb55084, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6284,6 +6376,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1322484903}
     m_Modifications:
+    - target: {fileID: 1545404231744671300, guid: 481efe8b22bb89a42bcf909e0c9a6fb8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 3523415168622001833, guid: 481efe8b22bb89a42bcf909e0c9a6fb8, type: 3}
       propertyPath: m_Name
       value: MailBox (3)
@@ -6475,8 +6571,8 @@ Transform:
   m_GameObject: {fileID: 1341046516}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.9, y: 13.3, z: 0}
-  m_LocalScale: {x: 1, y: 39.867733, z: 1}
+  m_LocalPosition: {x: 39.8, y: 13.7, z: 0}
+  m_LocalScale: {x: 1, y: 36, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 68214981}
@@ -6570,9 +6666,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1400
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6728,6 +6824,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.2667358
       objectReference: {fileID: 0}
+    - target: {fileID: 8136733862877056987, guid: 06847fe8acd3fba42883816120a5d20c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6785,6 +6885,10 @@ PrefabInstance:
     - target: {fileID: 2495590357498709425, guid: 88558341af8d4584c9e389d232630263, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127042592688006161, guid: 88558341af8d4584c9e389d232630263, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
       objectReference: {fileID: 0}
     - target: {fileID: 7168644502662755060, guid: 88558341af8d4584c9e389d232630263, type: 3}
       propertyPath: m_Name
@@ -7054,6 +7158,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1509675970}
     m_Modifications:
+    - target: {fileID: 929856802278330094, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 6419594821724514048, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
       propertyPath: m_Name
       value: Tree
@@ -7347,6 +7455,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4127042592688006161, guid: 88558341af8d4584c9e389d232630263, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 7168644502662755060, guid: 88558341af8d4584c9e389d232630263, type: 3}
       propertyPath: m_Name
       value: Firehydrant (3)
@@ -7482,6 +7594,10 @@ PrefabInstance:
     - target: {fileID: 7270516515417000655, guid: 06847fe8acd3fba42883816120a5d20c, type: 3}
       propertyPath: m_Offset.y
       value: -0.23311996
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136733862877056987, guid: 06847fe8acd3fba42883816120a5d20c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7908,6 +8024,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1509675970}
     m_Modifications:
+    - target: {fileID: 929856802278330094, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 6419594821724514048, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
       propertyPath: m_Name
       value: Tree (1)
@@ -8068,6 +8188,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 752963885}
     m_Modifications:
+    - target: {fileID: 452548266209092723, guid: 3eeb44b24478445ce995142a05418e60, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7562778828324089999, guid: 3eeb44b24478445ce995142a05418e60, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8125,6 +8249,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1322484903}
     m_Modifications:
+    - target: {fileID: 1545404231744671300, guid: 481efe8b22bb89a42bcf909e0c9a6fb8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 3523415168622001833, guid: 481efe8b22bb89a42bcf909e0c9a6fb8, type: 3}
       propertyPath: m_Name
       value: MailBox (1)
@@ -8773,7 +8901,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 152
+  m_SortingOrder: 1050
   m_Sprite: {fileID: -2040901916027038523, guid: 3c5963e780b086449b7bcbe2fcb55084, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9091,6 +9219,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.21967435
       objectReference: {fileID: 0}
+    - target: {fileID: 8136733862877056987, guid: 06847fe8acd3fba42883816120a5d20c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9268,6 +9400,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1509675970}
     m_Modifications:
+    - target: {fileID: 929856802278330094, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 6419594821724514048, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
       propertyPath: m_Name
       value: Tree
@@ -10193,6 +10329,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.26001263
       objectReference: {fileID: 0}
+    - target: {fileID: 8136733862877056987, guid: 06847fe8acd3fba42883816120a5d20c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10275,6 +10415,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1509675970}
     m_Modifications:
+    - target: {fileID: 929856802278330094, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 6419594821724514048, guid: ea16f99a4d9d94346913110a67303c1f, type: 3}
       propertyPath: m_Name
       value: Tree (2)
@@ -10408,6 +10552,10 @@ PrefabInstance:
     - target: {fileID: 7270516515417000655, guid: 06847fe8acd3fba42883816120a5d20c, type: 3}
       propertyPath: m_Offset.y
       value: -0.19278193
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136733862877056987, guid: 06847fe8acd3fba42883816120a5d20c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10637,6 +10785,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4127042592688006161, guid: 88558341af8d4584c9e389d232630263, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 7168644502662755060, guid: 88558341af8d4584c9e389d232630263, type: 3}
       propertyPath: m_Name
       value: Firehydrant (4)
@@ -10718,6 +10870,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1856072347}
     m_Modifications:
+    - target: {fileID: 1717327783585411651, guid: 46d72bb2805f7b44da7bdf317eee3162, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1050
+      objectReference: {fileID: 0}
     - target: {fileID: 6856071586531101583, guid: 46d72bb2805f7b44da7bdf317eee3162, type: 3}
       propertyPath: m_Size.y
       value: 1.8732696

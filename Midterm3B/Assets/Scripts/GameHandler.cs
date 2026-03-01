@@ -29,6 +29,11 @@ public class GameHandler : MonoBehaviour {
     void Start() {
         if(newGame == true){
             timer = 0;
+            buildingsHit = 0;
+            peopleHit = 0;
+            carsHit = 0;
+            bonusConesGot = 0;
+            theTimer = 0f;
         }
         introText.text = "Destroy the Ice Cream Store!";
         StartCoroutine(startCountdown());
@@ -97,6 +102,10 @@ public class GameHandler : MonoBehaviour {
 
     public void Credits() {
         SceneManager.LoadScene("Credits");
+    }
+
+    public void HowToPlay() {
+        SceneManager.LoadScene("HowToPlay");
     }
 
     public void RestartGame() {
