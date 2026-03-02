@@ -20,6 +20,8 @@ public class GameHandler : MonoBehaviour {
     public GameObject changeTimeBG;
     public GameObject countdown;
 
+    public AudioManager audioManager;
+
     public static int buildingsHit = 0;
     public static int peopleHit = 0;
     public static int carsHit = 0;
@@ -132,6 +134,7 @@ public class GameHandler : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         
         if(newGame == true && gameGo == true){
+            audioManager.PlayMusicAtBegin();
             timerLive = true;
             gameGo = false;
         }
