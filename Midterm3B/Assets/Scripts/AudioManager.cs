@@ -41,8 +41,10 @@ public class AudioManager : MonoBehaviour {
 
         void Update(){
                //keep track of timestamp, to auto-call it in the next scene:
-               musicTimeStamp = theMusic.time;
-               currentTimeStamp = theMusic.time;
+               if(SceneManager.GetActiveScene().name != "EndWin"){
+                        musicTimeStamp = theMusic.time;
+                        currentTimeStamp = theMusic.time;
+               }      
         }
 
 //change timestamp (can be called by door code):

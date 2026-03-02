@@ -17,6 +17,9 @@ public class EndScreenController : MonoBehaviour
     public TMP_Text hitBuildingsText;
     public TMP_Text totalText;
 
+    public AudioSource lowSFX;
+    public AudioSource endSFX;
+
 
     void Start()
     {
@@ -37,15 +40,21 @@ public class EndScreenController : MonoBehaviour
         int yesDecimal = GameHandler.timer % 10;
         yield return new WaitForSeconds(1f);
         timerText.text = "TIME: " + (noDecimal - GameHandler.bonusConesGot*(-1) - GameHandler.peopleHit*(10) - GameHandler.carsHit*(10) - GameHandler.buildingsHit*(5)) + "." + yesDecimal;
+        lowSFX.Play();
         yield return new WaitForSeconds(1f);
         bonusCherriesText.text = "Bonus Cherries: " + GameHandler.bonusConesGot + "   x  -1.0 = -" + GameHandler.bonusConesGot*(1) + ".0";
+        lowSFX.Play();
         yield return new WaitForSeconds(1f);
         hitPedestriansText.text = "Hit Pedestrians: " + GameHandler.peopleHit + "   x  +10.0 = +" + GameHandler.peopleHit*(10)+ ".0";
+        lowSFX.Play();
         yield return new WaitForSeconds(1f);
         hitCarsText.text = "Hit Cars: " + GameHandler.carsHit + "   x  +10.0 = +" + GameHandler.carsHit*(10)+ ".0";
+        lowSFX.Play();
         yield return new WaitForSeconds(1f);
         hitBuildingsText.text = "Hit Trees/Buildings: " + GameHandler.buildingsHit + "   x  +5.0 = +" + GameHandler.buildingsHit*(5)+ ".0";
+        lowSFX.Play();
         yield return new WaitForSeconds(1f);
         totalText.text = "TOTAL: " + noDecimal + "." + yesDecimal;
+        endSFX.Play();
     }
 }

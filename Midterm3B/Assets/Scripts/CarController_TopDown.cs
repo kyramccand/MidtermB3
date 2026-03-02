@@ -7,6 +7,7 @@ public class CarController_TopDown : MonoBehaviour {
 
     public GameHandler gameHandlerObj;
     public AudioSource thudSFX;
+    public AudioSource honkSFX;
 
     [Header("Car settings")]
     public float accelerationFactor = 10.0f;
@@ -110,6 +111,7 @@ public class CarController_TopDown : MonoBehaviour {
         if(other.gameObject.tag == "Building" || other.gameObject.tag == "Wall"){
           thudSFX.Play();
           gameHandlerObj.AddTime(50);
+          honkSFX.Play();
           if(GameHandler.timerLive == true){
                GameHandler.buildingsHit++;
           }
@@ -121,6 +123,7 @@ public class CarController_TopDown : MonoBehaviour {
 
         else if(other.gameObject.tag == "Pedestrian"){
           gameHandlerObj.AddTime(100);
+          honkSFX.Play();
           Destroy(other.gameObject);
           if(GameHandler.timerLive == true){
                GameHandler.peopleHit++;
@@ -129,6 +132,7 @@ public class CarController_TopDown : MonoBehaviour {
 
         else if(other.gameObject.tag == "TrafficCar") {
           gameHandlerObj.AddTime(100);
+          honkSFX.Play();
           Destroy(other.gameObject);
           if(GameHandler.timerLive == true){
                GameHandler.carsHit++;

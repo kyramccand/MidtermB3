@@ -27,6 +27,9 @@ public class GameHandler : MonoBehaviour {
     public static int carsHit = 0;
     public static int bonusConesGot = 0;
 
+    public AudioSource lowSFX;
+    public AudioSource highSFX;
+
 
     void Start() {
         if(newGame == true){
@@ -119,21 +122,26 @@ public class GameHandler : MonoBehaviour {
     }
 
     IEnumerator startCountdown() {
-        countdown.SetActive(true);
-        countdown.GetComponent<ChangeCountdown>().Number("3");
-        yield return new WaitForSeconds(1f);
-        countdown.GetComponent<ChangeCountdown>().Number("2");
-        yield return new WaitForSeconds(1f);
-        countdown.GetComponent<ChangeCountdown>().Number("1");
-        yield return new WaitForSeconds(1f);
-        
-        // Hide the message after the countdown ends
-        introText.enabled = false;
-        
-        countdown.GetComponent<ChangeCountdown>().Go();
-        yield return new WaitForSeconds(0.5f);
-        
         if(newGame == true && gameGo == true){
+            countdown.SetActive(true);
+            countdown.GetComponent<ChangeCountdown>().Number("3");
+            lowSFX.Play();
+            yield return new WaitForSeconds(1f);
+            countdown.GetComponent<ChangeCountdown>().Number("2");
+            lowSFX.Play();
+            yield return new WaitForSeconds(1f);
+            countdown.GetComponent<ChangeCountdown>().Number("1");
+            lowSFX.Play();
+            yield return new WaitForSeconds(1f);
+            
+            // Hide the message after the countdown ends
+            introText.enabled = false;
+            
+            countdown.GetComponent<ChangeCountdown>().Go();
+            highSFX.Play();
+            yield return new WaitForSeconds(0.5f);
+        
+        
             audioManager.PlayMusicAtBegin();
             timerLive = true;
             gameGo = false;
