@@ -5,6 +5,8 @@ using UnityEngine;
 //This script goes onto the Player object
 public class CarController_TopDown : MonoBehaviour {
 
+     private CameraController cameraController;
+
     public GameHandler gameHandlerObj;
     public AudioSource thudSFX;
     public AudioSource honkSFX;
@@ -30,6 +32,7 @@ public class CarController_TopDown : MonoBehaviour {
 
     void Awake(){
         carRb2D = GetComponent<Rigidbody2D>();
+        cameraController = Camera.main.GetComponent<CameraController>();
         if(GameObject.FindWithTag("GameHandler") != null){
           gameHandlerObj = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
         }
@@ -116,10 +119,12 @@ public class CarController_TopDown : MonoBehaviour {
           if(GameHandler.timerLive == true){
                GameHandler.buildingsHit++;
           }
+          cameraController.ShakeCamera(0.15f, 0.1f);
         }
         
         else if(other.gameObject.tag == "IceCreamStore"){
           gameHandlerObj.WinGame();
+          cameraController.ShakeCamera(0.15f, 0.5f);
         }
 
         else if(other.gameObject.tag == "Pedestrian"){

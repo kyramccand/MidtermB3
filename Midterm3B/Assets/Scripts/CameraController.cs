@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -9,6 +11,7 @@ public class CameraController : MonoBehaviour
     public float waitDuration = 1f;
 
     private Vector3 velocity = Vector3.zero;
+    private Vector3 shake = Vector3.zero;
     private float waitTime = 0f;
     private float elapsedTime = 0f;
     private bool isPanning = false;
@@ -50,7 +53,26 @@ public class CameraController : MonoBehaviour
         
         // After that, follow the player for the rest of the game!
         else {
-            transform.position = new Vector3(player.position.x, player.position.y, -1);
+            transform.position = new Vector3(player.position.x + shake.x, player.position.y + shake.y, -1);
         }
     }
+
+
+    public void ShakeCamera(float durationTime2, float magnitude2){
+        StartCoroutine(ShakeMe(durationTime2, magnitude2));
+    }
+
+       //the screenshake!
+       IEnumerator ShakeMe(float durationTime, float magnitude){
+              float elapsedTime = 0.0f;
+
+              while (elapsedTime < durationTime){
+                     float sX = Random.Range(-1f, 1f) * magnitude;
+                     float sY = Random.Range(-1f, 1f) * magnitude;
+
+                     shake = new Vector3((sX), (sY), 0);
+                     elapsedTime += Time.deltaTime;
+                     yield return null;
+              }
+       }
 }

@@ -952,7 +952,7 @@ GameObject:
   - component: {fileID: 197395477}
   m_Layer: 0
   m_Name: Trash_Can (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1715,7 +1715,7 @@ GameObject:
   - component: {fileID: 333362356}
   m_Layer: 0
   m_Name: Lamp_post (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2536,6 +2536,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp Post_TrashCans
       objectReference: {fileID: 0}
+    - target: {fileID: 4129326744216829964, guid: 27a2b61a43b9a48408d15a8d1a69a349, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4130215424081473808, guid: 27a2b61a43b9a48408d15a8d1a69a349, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.01
@@ -2604,6 +2608,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -10.42
       objectReference: {fileID: 0}
+    - target: {fileID: 6175809572730996815, guid: 27a2b61a43b9a48408d15a8d1a69a349, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 8032271870200668805, guid: 27a2b61a43b9a48408d15a8d1a69a349, type: 3}
       propertyPath: m_SortingOrder
       value: 1050
@@ -2628,19 +2636,19 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4130215424081473808, guid: 27a2b61a43b9a48408d15a8d1a69a349, type: 3}
-      insertIndex: 1
+      insertIndex: -1
       addedObject: {fileID: 1186474265}
     - targetCorrespondingSourceObject: {fileID: 4130215424081473808, guid: 27a2b61a43b9a48408d15a8d1a69a349, type: 3}
-      insertIndex: 2
+      insertIndex: -1
       addedObject: {fileID: 539325067}
     - targetCorrespondingSourceObject: {fileID: 4130215424081473808, guid: 27a2b61a43b9a48408d15a8d1a69a349, type: 3}
-      insertIndex: 3
+      insertIndex: -1
       addedObject: {fileID: 576284203}
     - targetCorrespondingSourceObject: {fileID: 4130215424081473808, guid: 27a2b61a43b9a48408d15a8d1a69a349, type: 3}
-      insertIndex: 4
+      insertIndex: -1
       addedObject: {fileID: 949079623}
     - targetCorrespondingSourceObject: {fileID: 4130215424081473808, guid: 27a2b61a43b9a48408d15a8d1a69a349, type: 3}
-      insertIndex: 5
+      insertIndex: -1
       addedObject: {fileID: 333362355}
     - targetCorrespondingSourceObject: {fileID: 4130215424081473808, guid: 27a2b61a43b9a48408d15a8d1a69a349, type: 3}
       insertIndex: -1
@@ -3147,7 +3155,7 @@ GameObject:
   - component: {fileID: 539325068}
   m_Layer: 0
   m_Name: Lamp_post (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3493,7 +3501,7 @@ GameObject:
   - component: {fileID: 576284204}
   m_Layer: 0
   m_Name: Lamp_post (4)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4649,7 +4657,7 @@ GameObject:
   - component: {fileID: 949079624}
   m_Layer: 0
   m_Name: Lamp_post (5)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5370,7 +5378,7 @@ GameObject:
   - component: {fileID: 1055893267}
   m_Layer: 0
   m_Name: Trash_Can (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5919,7 +5927,7 @@ GameObject:
   - component: {fileID: 1186474266}
   m_Layer: 0
   m_Name: Lamp_post (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8838,7 +8846,7 @@ GameObject:
   - component: {fileID: 1778283925}
   m_Layer: 0
   m_Name: Trash_Can (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11096,6 +11104,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7597106731115565593, guid: e88e7e8fd630842cfa68d506a86c1cdf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318059493338446239, guid: e88e7e8fd630842cfa68d506a86c1cdf, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
