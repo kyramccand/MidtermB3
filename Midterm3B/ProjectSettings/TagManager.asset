@@ -16,6 +16,7 @@ TagManager:
   - PauseMenuSlider
   - Wall
   - AudioManager
+  - Obstacle
   layers:
   - Default
   - TransparentFX

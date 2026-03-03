@@ -8,6 +8,7 @@ public class CarController_TopDown : MonoBehaviour {
     public GameHandler gameHandlerObj;
     public AudioSource thudSFX;
     public AudioSource honkSFX;
+    public AudioSource tingSFX;
 
     [Header("Car settings")]
     public float accelerationFactor = 10.0f;
@@ -137,6 +138,10 @@ public class CarController_TopDown : MonoBehaviour {
           if(GameHandler.timerLive == true){
                GameHandler.carsHit++;
           }
+        }
+
+        else if(other.gameObject.tag == "Obstacle") {
+          tingSFX.Play();
         }
      }
 
