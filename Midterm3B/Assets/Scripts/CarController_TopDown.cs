@@ -11,6 +11,8 @@ public class CarController_TopDown : MonoBehaviour {
     public AudioSource thudSFX;
     public AudioSource honkSFX;
     public AudioSource tingSFX;
+    public AudioSource yellSFX;
+    public AudioSource crunchSFX;
 
     [Header("Car settings")]
     public float accelerationFactor = 10.0f;
@@ -128,6 +130,7 @@ public class CarController_TopDown : MonoBehaviour {
         }
 
         else if(other.gameObject.tag == "Pedestrian"){
+          yellSFX.Play();
           gameHandlerObj.AddTime(100);
           honkSFX.Play();
           Destroy(other.gameObject);
@@ -137,6 +140,7 @@ public class CarController_TopDown : MonoBehaviour {
         }
 
         else if(other.gameObject.tag == "TrafficCar") {
+          crunchSFX.Play();
           gameHandlerObj.AddTime(100);
           honkSFX.Play();
           Destroy(other.gameObject);
